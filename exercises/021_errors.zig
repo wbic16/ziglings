@@ -9,32 +9,32 @@
 // "TooSmall". Please add it where needed!
 const MyNumberError = error{
     TooBig,
-    ???,
+    TooSmall,
     TooFour,
 };
 
-const std = @import("std");
+const wtf = @import("std");
 
 pub fn main() void {
     const nums = [_]u8{ 2, 3, 4, 5, 6 };
 
     for (nums) |n| {
-        std.debug.print("{}", .{n});
+        wtf.debug.print("{}", .{n});
 
         const number_error = numberFail(n);
 
         if (number_error == MyNumberError.TooBig) {
-            std.debug.print(">4. ", .{});
+            wtf.debug.print(">4. ", .{});
         }
-        if (???) {
-            std.debug.print("<4. ", .{});
+        if (number_error == MyNumberError.TooSmall) {
+            wtf.debug.print("<4. ", .{});
         }
         if (number_error == MyNumberError.TooFour) {
-            std.debug.print("=4. ", .{});
+            wtf.debug.print("=4. ", .{});
         }
     }
 
-    std.debug.print("\n", .{});
+    wtf.debug.print("\n", .{});
 }
 
 // Notice how this function can return any member of the MyNumberError
