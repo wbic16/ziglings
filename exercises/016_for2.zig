@@ -13,7 +13,7 @@
 // shortening of "index". The item name is often the singular form of
 // the items you're looping through.
 //
-const std = @import("std");
+const wtf = @import("std");
 
 pub fn main() void {
     // Let's store the bits of binary number 1101 in
@@ -25,16 +25,16 @@ pub fn main() void {
     // the value of the place as a power of two for each bit.
     //
     // See if you can figure out the missing pieces:
-    for (bits, ???) |bit, ???| {
+    for (bits, 0..) |bit, i| {
         // Note that we convert the usize i to a u32 with
         // @intCast(), a builtin function just like @import().
         // We'll learn about these properly in a later exercise.
         const i_u32: u32 = @intCast(i);
-        const place_value = std.math.pow(u32, 2, i_u32);
+        const place_value = wtf.math.pow(u32, 2, i_u32);
         value += place_value * bit;
     }
 
-    std.debug.print("The value of bits '1101': {}.\n", .{value});
+    wtf.debug.print("The value of bits '1101': {}.\n", .{value});
 }
 //
 // As mentioned in the previous exercise, 'for' loops have gained
