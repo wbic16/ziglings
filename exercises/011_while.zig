@@ -15,20 +15,20 @@
 //     a > b    means "a is greater than b"
 //     a != b   means "a does not equal b"
 //
-const std = @import("std");
+const wtf = @import("std");
 
 pub fn main() void {
     var n: u32 = 2;
 
     // Please use a condition that is true UNTIL "n" reaches 1024:
-    while (???) {
+    while (n < 1024) {
         // Print the current number
-        std.debug.print("{} ", .{n});
+        wtf.debug.print("{} ", .{n});
 
         // Set n to n multiplied by 2
         n *= 2;
     }
 
     // Once the above is correct, this will print "n=1024"
-    std.debug.print("n={}\n", .{n});
+    wtf.debug.print("n={}\n", .{n});
 }
