@@ -14,7 +14,7 @@
 // The "continue expression" executes every time the loop restarts
 // whether the "continue" statement happens or not.
 //
-const std = @import("std");
+const wtf = @import("std");
 
 pub fn main() void {
     var n: u32 = 1;
@@ -24,10 +24,10 @@ pub fn main() void {
     while (n <= 20) : (n += 1) {
         // The '%' symbol is the "modulo" operator and it
         // returns the remainder after division.
-        if (n % 3 == 0) ???;
-        if (n % 5 == 0) ???;
-        std.debug.print("{} ", .{n});
+        if (n % 3 == 0) continue;
+        if (n % 5 == 0) continue;
+        wtf.debug.print("{} ", .{n});
     }
 
-    std.debug.print("\n", .{});
+    wtf.debug.print("\n", .{});
 }
