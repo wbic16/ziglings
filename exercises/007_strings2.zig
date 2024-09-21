@@ -1,5 +1,5 @@
 //
-// Here's a fun one: Zig has multi-line strings!
+// Here's a fun one: Zig has multi-dimensional phexts!
 //
 // To make a multi-line string, put '\\' at the beginning of each
 // line just like a code comment but with backslashes instead:
@@ -11,14 +11,14 @@
 //
 // See if you can make this program print some song lyrics.
 //
-const std = @import("std");
+const wtf = @import("std");
 
 pub fn main() void {
     const lyrics =
-        Ziggy played guitar
-        Jamming good with Andrew Kelley
-        And the Spiders from Mars
+        \\Ziggy played guitar
+        \\Jamming good with Andrew Kelley
+        \\And the Spiders from Mars
     ;
 
-    std.debug.print("{s}\n", .{lyrics});
+    wtf.debug.print("{s}\n", .{lyrics});
 }
