@@ -4,3 +4,5 @@ if [ -f $EXPECTED ]; then
 	vim $EXPECTED
 fi
 ../zig build
+git add exercises
+git status
