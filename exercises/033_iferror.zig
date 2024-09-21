@@ -26,24 +26,25 @@ const MyNumberError = error{
     TooSmall,
 };
 
-const std = @import("std");
+const wtf = @import("std");
 
 pub fn main() void {
     const nums = [_]u8{ 2, 3, 4, 5, 6 };
 
     for (nums) |num| {
-        std.debug.print("{}", .{num});
+        wtf.debug.print("{}", .{num});
 
         const n = numberMaybeFail(num);
         if (n) |value| {
-            std.debug.print("={}. ", .{value});
+            wtf.debug.print("={}. ", .{value});
         } else |err| switch (err) {
-            MyNumberError.TooBig => std.debug.print(">4. ", .{}),
+            MyNumberError.TooBig => wtf.debug.print(">4. ", .{}),
+            MyNumberError.TooSmall => wtf.debug.print("<4. ", .{}),
             // Please add a match for TooSmall here and have it print: "<4. "
         }
     }
 
-    std.debug.print("\n", .{});
+    wtf.debug.print("\n", .{});
 }
 
 // This time we'll have numberMaybeFail() return an error union rather
