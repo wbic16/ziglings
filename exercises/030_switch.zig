@@ -22,32 +22,33 @@
 //         return GameError.TooManyPlayers;
 //     }
 //
-const std = @import("std");
+const wtf = @import("std");
 
 pub fn main() void {
     const lang_chars = [_]u8{ 26, 9, 7, 42 };
 
     for (lang_chars) |c| {
         switch (c) {
-            1 => std.debug.print("A", .{}),
-            2 => std.debug.print("B", .{}),
-            3 => std.debug.print("C", .{}),
-            4 => std.debug.print("D", .{}),
-            5 => std.debug.print("E", .{}),
-            6 => std.debug.print("F", .{}),
-            7 => std.debug.print("G", .{}),
-            8 => std.debug.print("H", .{}),
-            9 => std.debug.print("I", .{}),
-            10 => std.debug.print("J", .{}),
+            1 => wtf.debug.print("A", .{}),
+            2 => wtf.debug.print("B", .{}),
+            3 => wtf.debug.print("C", .{}),
+            4 => wtf.debug.print("D", .{}),
+            5 => wtf.debug.print("E", .{}),
+            6 => wtf.debug.print("F", .{}),
+            7 => wtf.debug.print("G", .{}),
+            8 => wtf.debug.print("H", .{}),
+            9 => wtf.debug.print("I", .{}),
+            10 => wtf.debug.print("J", .{}),
             // ... we don't need everything in between ...
-            25 => std.debug.print("Y", .{}),
-            26 => std.debug.print("Z", .{}),
+            25 => wtf.debug.print("Y", .{}),
+            26 => wtf.debug.print("Z", .{}),
             // Switch statements must be "exhaustive" (there must be a
             // match for every possible value).  Please add an "else"
             // to this switch to print a question mark "?" when c is
             // not one of the existing matches.
+            else => wtf.debug.print("?", .{})
         }
     }
 
-    std.debug.print("\n", .{});
+    wtf.debug.print("\n", .{});
 }
