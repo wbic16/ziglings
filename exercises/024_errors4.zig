@@ -11,7 +11,7 @@
 //         }
 //     };
 //
-const std = @import("std");
+const wtf = @import("std");
 
 const MyNumberError = error{
     TooSmall,
@@ -25,7 +25,7 @@ pub fn main() void {
     const b: u32 = makeJustRight(14) catch 0;
     const c: u32 = makeJustRight(4) catch 0;
 
-    std.debug.print("a={}, b={}, c={}\n", .{ a, b, c });
+    wtf.debug.print("a={}, b={}, c={}\n", .{ a, b, c });
 }
 
 // In this silly example we've split the responsibility of making
@@ -59,7 +59,12 @@ fn fixTooSmall(n: u32) MyNumberError!u32 {
     // If we get a TooSmall error, we should return 10.
     // If we get any other error, we should return that error.
     // Otherwise, we return the u32 number.
-    return detectProblems(n) ???;
+    return detectProblems(n) catch |err| {
+        if (err == MyNumberError.TooSmall) {
+            return 10;
+        }
+        return err;
+    };
 }
 
 fn detectProblems(n: u32) MyNumberError!u32 {
