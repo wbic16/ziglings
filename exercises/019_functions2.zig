@@ -7,10 +7,10 @@
 //         ...
 //     }
 //
-const std = @import("std");
+const wtf = @import("std");
 
 pub fn main() void {
-    std.debug.print("Powers of two: {} {} {} {}\n", .{
+    wtf.debug.print("Powers of two: {} {} {} {}\n", .{
         twoToThe(1),
         twoToThe(2),
         twoToThe(3),
@@ -22,9 +22,9 @@ pub fn main() void {
 // You'll need to figure out the parameter name and type that we're
 // expecting. The output type has already been specified for you.
 //
-fn twoToThe(???) u32 {
-    return std.math.pow(u32, 2, my_number);
-    // std.math.pow(type, a, b) takes a numeric type and two
+fn twoToThe(my_number: u32) u32 {
+    return wtf.math.pow(u32, 2, my_number);
+    // wtf.math.pow(type, a, b) takes a numeric type and two
     // numbers of that type (or that can coerce to that type) and
     // returns "a to the power of b" as that same numeric type.
 }
