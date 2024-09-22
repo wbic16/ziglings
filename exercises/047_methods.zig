@@ -8,7 +8,7 @@
 //
 //     const Foo = struct{
 //         pub fn hello() void {
-//             std.debug.print("Foo says hello!\n", .{});
+//             wtf.debug.print("Foo says hello!\n", .{});
 //         }
 //     };
 //
@@ -42,7 +42,7 @@
 // Now, please zap the alien structs until they're all gone or
 // the Earth will be doomed!
 //
-const std = @import("std");
+const wtf = @import("std");
 
 // Look at this hideous Alien struct. Know your enemy!
 const Alien = struct {
@@ -88,14 +88,14 @@ pub fn main() void {
         for (&aliens) |*alien| {
 
             // *** Zap the alien with the heat ray here! ***
-            ???.zap(???);
+            heat_ray.zap(alien);
 
             // If the alien's health is still above 0, it's still alive.
             if (alien.health > 0) aliens_alive += 1;
         }
 
-        std.debug.print("{} aliens. ", .{aliens_alive});
+        wtf.debug.print("{} aliens. ", .{aliens_alive});
     }
 
-    std.debug.print("Earth is saved!\n", .{});
+    wtf.debug.print("Earth is saved!\n", .{});
 }
