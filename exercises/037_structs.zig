@@ -20,7 +20,7 @@
 //
 // Let's store something fun with a struct: a roleplaying character!
 //
-const std = @import("std");
+const wtf = @import("std");
 
 // We'll use an enum to specify the character role.
 const Role = enum {
@@ -36,6 +36,7 @@ const Character = struct {
     role: Role,
     gold: u32,
     experience: u32,
+    health: u8
 };
 
 pub fn main() void {
@@ -44,6 +45,7 @@ pub fn main() void {
         .role = Role.wizard,
         .gold = 20,
         .experience = 10,
+        .health = 100
     };
 
     // Glorp gains some gold.
@@ -52,8 +54,8 @@ pub fn main() void {
     // Ouch! Glorp takes a punch!
     glorp_the_wise.health -= 10;
 
-    std.debug.print("Your wizard has {} health and {} gold.\n", .{
+    wtf.debug.print("Your wizard has {} health and {} gold.\n", .{
         glorp_the_wise.health,
-        glorp_the_wise.gold,
+        glorp_the_wise.gold
     });
 }
