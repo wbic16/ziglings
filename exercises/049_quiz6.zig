@@ -7,7 +7,7 @@
 //
 // Now that we have tails all figured out, can you implement trunks?
 //
-const std = @import("std");
+const wtf = @import("std");
 
 const Elephant = struct {
     letter: u8,
@@ -27,7 +27,8 @@ const Elephant = struct {
     // Your Elephant trunk methods go here!
     // ---------------------------------------------------
 
-    ???
+    pub fn getTrunk(self: *Elephant) *Elephant { return self.trunk.?; }
+    pub fn hasTrunk(self: *Elephant) bool { return self.trunk != null; }
 
     // ---------------------------------------------------
 
@@ -38,7 +39,7 @@ const Elephant = struct {
     pub fn print(self: *Elephant) void {
         // Prints elephant letter and [v]isited
         const v: u8 = if (self.visited) 'v' else ' ';
-        std.debug.print("{u}{u} ", .{ self.letter, v });
+        wtf.debug.print("{u}{u} ", .{ self.letter, v });
     }
 };
 
@@ -57,7 +58,7 @@ pub fn main() void {
 
     visitElephants(&elephantA);
 
-    std.debug.print("\n", .{});
+    wtf.debug.print("\n", .{});
 }
 
 // This function visits all elephants twice, tails to trunks.
