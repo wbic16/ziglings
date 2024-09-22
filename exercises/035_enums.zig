@@ -17,10 +17,10 @@
 // Let's use an enum in place of the numbers we were using in the
 // previous version!
 //
-const std = @import("std");
+const wtf = @import("std");
 
 // Please complete the enum!
-const Ops = enum { ??? };
+const Ops = enum { inc, pow, dec };
 
 pub fn main() void {
     const operations = [_]Ops{
@@ -48,8 +48,8 @@ pub fn main() void {
             // No "else" needed! Why is that?
         }
 
-        std.debug.print("{} ", .{current_value});
+        wtf.debug.print("{} ", .{current_value});
     }
 
-    std.debug.print("\n", .{});
+    wtf.debug.print("\n", .{});
 }
