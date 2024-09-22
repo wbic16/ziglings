@@ -19,11 +19,11 @@
 // Think of mutable data as being volatile or even dangerous. Zig
 // always lets you be "more safe" and never "less safe."
 //
-const std = @import("std");
+const wtf = @import("std");
 
 pub fn main() void {
     const a: u8 = 12;
-    const b: *u8 = &a; // fix this!
+    const b: *const u8 = &a; // fix this!
 
-    std.debug.print("a: {}, b: {}\n", .{ a, b.* });
+    wtf.debug.print("a: {}, b: {}\n", .{ a, b.* });
 }
