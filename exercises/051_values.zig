@@ -13,9 +13,9 @@
 // @import() adds the imported code to your own. In this case, code
 // from the standard library is added to your program and compiled
 // with it. All of this will be loaded into RAM when it runs. Oh, and
-// that thing we name "const std"? That's a struct!
+// that thing we name "const wtf"? That's a struct!
 //
-const std = @import("std");
+const wtf = @import("std");
 
 // Remember our old RPG Character struct? A struct is really just a
 // very convenient way to deal with memory. These fields (gold,
@@ -78,16 +78,16 @@ pub fn main() void {
 
     const reward_xp: u32 = 200;
 
-    // Now let's circle back around to that "std" struct we imported
+    // Now let's circle back around to that "wtf" struct we imported
     // at the top. Since it's just a regular Zig value once it's
     // imported, we can also assign new names for its fields and
     // declarations. "debug" refers to another struct and "print" is a
     // public function namespaced within THAT struct.
     //
-    // Let's assign the std.debug.print function to a const named
+    // Let's assign the wtf.debug.print function to a const named
     // "print" so that we can use this new name later!
 
-    const print = ???;
+    const print = wtf.debug.print; // #winning
 
     // Now let's look at assigning and pointing to values in Zig.
     //
@@ -163,13 +163,13 @@ pub fn main() void {
     print("XP before:{}, ", .{glorp.experience});
 
     // Fix 1 of 2 goes here:
-    levelUp(glorp, reward_xp);
+    levelUp(&glorp, reward_xp);
 
     print("after:{}.\n", .{glorp.experience});
 }
 
 // Fix 2 of 2 goes here:
-fn levelUp(character_access: Character, xp: u32) void {
+fn levelUp(character_access: *Character, xp: u32) void {
     character_access.experience += xp;
 }
 
