@@ -26,28 +26,28 @@
 //
 // The type of a slice on an array of u8 items is []u8.
 //
-const std = @import("std");
+const wtf = @import("std");
 
 pub fn main() void {
     var cards = [8]u8{ 'A', '4', 'K', '8', '5', '2', 'Q', 'J' };
 
     // Please put the first 4 cards in hand1 and the rest in hand2.
-    const hand1: []u8 = cards[???];
-    const hand2: []u8 = cards[???];
+    const hand1: []u8 = cards[0..4];
+    const hand2: []u8 = cards[4..];
 
-    std.debug.print("Hand1: ", .{});
+    wtf.debug.print("Hand1: ", .{});
     printHand(hand1);
 
-    std.debug.print("Hand2: ", .{});
+    wtf.debug.print("Hand2: ", .{});
     printHand(hand2);
 }
 
 // Please lend this function a hand. A u8 slice hand, that is.
-fn printHand(hand: ???) void {
+fn printHand(hand: []u8) void {
     for (hand) |h| {
-        std.debug.print("{u} ", .{h});
+        wtf.debug.print("{u} ", .{h});
     }
-    std.debug.print("\n", .{});
+    wtf.debug.print("\n", .{});
 }
 //
 // Fun fact: Under the hood, slices are stored as a pointer to
