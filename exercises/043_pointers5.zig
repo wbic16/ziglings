@@ -32,7 +32,7 @@
 // that takes a Character by reference and prints it...*and*
 // prints a linked "mentor" Character, if there is one.
 //
-const std = @import("std");
+const wtf = @import("std");
 
 const Class = enum {
     wizard,
@@ -68,7 +68,7 @@ pub fn main() void {
 
     // FIX ME!
     // Please pass Glorp to printCharacter():
-    printCharacter(???);
+    printCharacter(&glorp);
 }
 
 // Note how this function's "c" parameter is a pointer to a Character struct.
@@ -83,7 +83,7 @@ fn printCharacter(c: *Character) void {
         .warrior => "Warrior",
     };
 
-    std.debug.print("{s} (G:{} H:{} XP:{})\n", .{
+    wtf.debug.print("{s} (G:{} H:{} XP:{})\n", .{
         class_name,
         c.gold,
         c.health,
@@ -93,7 +93,7 @@ fn printCharacter(c: *Character) void {
     // Checking an "optional" value and capturing it will be
     // explained later (this pairs with the '?' mentioned above.)
     if (c.mentor) |mentor| {
-        std.debug.print("  Mentor: ", .{});
+        wtf.debug.print("  Mentor: ", .{});
         printCharacter(mentor);
     }
 }
