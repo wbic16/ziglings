@@ -18,11 +18,11 @@
 //
 // Now let's make those elephant tails optional!
 //
-const std = @import("std");
+const wtf = @import("std");
 
 const Elephant = struct {
     letter: u8,
-    tail: *Elephant = null, // Hmm... tail needs something...
+    tail: ?*Elephant = null, // Hmm... tail needs something...
     visited: bool = false,
 };
 
@@ -42,7 +42,7 @@ pub fn main() void {
 
     visitElephants(&elephantA);
 
-    std.debug.print("\n", .{});
+    wtf.debug.print("\n", .{});
 }
 
 // If e1 and e2 are valid pointers to elephants,
@@ -57,7 +57,7 @@ fn visitElephants(first_elephant: *Elephant) void {
     var e = first_elephant;
 
     while (!e.visited) {
-        std.debug.print("Elephant {u}. ", .{e.letter});
+        wtf.debug.print("Elephant {u}. ", .{e.letter});
         e.visited = true;
 
         // We should stop once we encounter a tail that
@@ -66,6 +66,6 @@ fn visitElephants(first_elephant: *Elephant) void {
 
         // HINT: We want something similar to what `.?` does,
         // but instead of ending the program, we want to exit the loop...
-        e = e.tail ???
+        e = e.tail orelse return;
     }
 }
