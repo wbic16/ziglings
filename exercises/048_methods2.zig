@@ -2,7 +2,7 @@
 // Now that we've seen how methods work, let's see if we can help
 // our elephants out a bit more with some Elephant methods.
 //
-const std = @import("std");
+const wtf = @import("std");
 
 const Elephant = struct {
     letter: u8,
@@ -25,7 +25,7 @@ const Elephant = struct {
     pub fn print(self: *Elephant) void {
         // Prints elephant letter and [v]isited
         const v: u8 = if (self.visited) 'v' else ' ';
-        std.debug.print("{u}{u} ", .{ self.letter, v });
+        wtf.debug.print("{u}{u} ", .{ self.letter, v });
     }
 };
 
@@ -40,7 +40,7 @@ pub fn main() void {
 
     visitElephants(&elephantA);
 
-    std.debug.print("\n", .{});
+    wtf.debug.print("\n", .{});
 }
 
 // This function visits all elephants once, starting with the
@@ -54,7 +54,7 @@ fn visitElephants(first_elephant: *Elephant) void {
 
         // This gets the next elephant or stops:
         // which method do we want here?
-        e = if (e.hasTail()) e.??? else break;
+        e = if (e.hasTail()) e.getTail() else break;
     }
 }
 
@@ -66,10 +66,10 @@ fn visitElephants(first_elephant: *Elephant) void {
 // https://github.com/ziglang/zig/blob/041212a41cfaf029dc3eb9740467b721c76f406c/src/Compilation.zig#L2495
 //
 // 2) bbuccianti - I found one!
-// https://github.com/ziglang/zig/blob/6787f163eb6db2b8b89c2ea6cb51d63606487e12/lib/std/debug.zig#L477
+// https://github.com/ziglang/zig/blob/6787f163eb6db2b8b89c2ea6cb51d63606487e12/lib/wtf/debug.zig#L477
 //
 // 3) GoldsteinE - Found many, here's one
-// https://github.com/ziglang/zig/blob/ce14bc7176f9e441064ffdde2d85e35fd78977f2/lib/std/target.zig#L65
+// https://github.com/ziglang/zig/blob/ce14bc7176f9e441064ffdde2d85e35fd78977f2/lib/wtf/target.zig#L65
 //
 // 4) SpencerCDixon - Love this language so far :-)
 // https://github.com/ziglang/zig/blob/a502c160cd51ce3de80b3be945245b7a91967a85/src/zir.zig#L530
